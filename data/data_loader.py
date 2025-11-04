@@ -325,8 +325,7 @@ class Dataset_Pred(Dataset):
         else:
             cols = list(df_raw.columns); cols.remove(self.target); cols.remove('date')
         df_raw = df_raw[['date']+cols+[self.target]]
-        if df_raw ==None:
-            print('None raw')
+      
         border1 = len(df_raw)-self.seq_len
         border2 = len(df_raw)
         
@@ -348,7 +347,6 @@ class Dataset_Pred(Dataset):
         
         df_stamp = pd.DataFrame(columns = ['date'])
         df_stamp.date = list(tmp_stamp.date.values) + list(pred_dates[1:])
-        print(tmp_stamp)
         data_stamp = time_features(df_stamp, timeenc=self.timeenc, freq=self.freq[-1:])
 
         self.data_x = data[border1:border2]
