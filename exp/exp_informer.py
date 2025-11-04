@@ -88,7 +88,7 @@ class Exp_Informer(Exp_Basic):
             features=args.features,
             target=args.target,
             inverse=args.inverse,
-            timeenc= 1,
+            timeenc= timeenc,
             freq=freq,
             cols=args.cols
         )
