@@ -325,7 +325,8 @@ class Dataset_Pred(Dataset):
         else:
             cols = list(df_raw.columns); cols.remove(self.target); cols.remove('date')
         df_raw = df_raw[['date']+cols+[self.target]]
-        print(df_raw)
+        if df_raw ==None:
+            print('None raw')
         border1 = len(df_raw)-self.seq_len
         border2 = len(df_raw)
         
