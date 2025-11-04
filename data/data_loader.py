@@ -343,6 +343,7 @@ class Dataset_Pred(Dataset):
             
         tmp_stamp = df_raw[['date']][border1:border2]
         tmp_stamp['date'] = pd.to_datetime(tmp_stamp.date)
+        print(tmp_stamp)
         pred_dates = pd.date_range(tmp_stamp.date.values[-1], periods=self.pred_len+1, freq=self.freq)
         
         df_stamp = pd.DataFrame(columns = ['date'])
